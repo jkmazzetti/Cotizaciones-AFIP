@@ -3,7 +3,7 @@
 <zk xmlns:h="native">
     <window class="principal" id="principal" apply="Controladores.IndexControlador" contentStyle="text-align:left;width:80%;margin:auto;margin-bottom:50px;">
 	
-        <?page title="WEB APP Demo Mazzetti 2022"?>
+        <?page title="Cotizaciones AFIP"?>
         
         <h:div class="contenedor">
             <h:h3 class="titulo">Cotizaciones de Automiviles realizadas por AFIP<h:br></h:br>entre los años 2012 y 2021</h:h3>
