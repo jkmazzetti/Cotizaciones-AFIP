@@ -1,12 +1,13 @@
 # Cotizaciones-AFIP
-Este proyecto es una web app que consume datos de las cotizaciones que relizó la AFIP de automoviles entre los años 2012 y 2021 que fueron previamente 
-migrados de un archivo excel a una base de datos normalizada en sql server.
+Este proyecto es una web app que consume datos de las cotizaciones que realizó la AFIP de automoviles entre los años 2012 y 2021 que fueron previamente 
+migrados de un archivo excel a una base de datos normalizada en Microsfoft SQL Server.
 
-Se utilizó Framework ZK.
-Lenguaje de programacion JAVA.
-HTML y CSS.
+Framework ZK.
+JAVA.
+HTML.
+CSS.
 Web Server Payara.
-DB Server SQL Server.
+DB Server Microsoft SQL Server.
 
 
 Excel utilizado:
