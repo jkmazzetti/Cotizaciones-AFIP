@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<zk xmlns:h="native">
+    <window class="principal" id="principal" apply="Controladores.IndexControlador" contentStyle="text-align:left;width:80%;margin:auto;margin-bottom:50px;">
+	
+        <?page title="WEB APP Demo Mazzetti 2022"?>
+        
+        <h:div class="contenedor">
+            <h:h3 class="titulo">Cotizaciones de Automiviles realizadas por AFIP<h:br></h:br>entre los años 2012 y 2022</h:h3>
+            <h:p>
+                
+            </h:p>
+            <h:h3 class="titulo-app">Iniciar Búqueda</h:h3>
+            <h:div class="busqueda-barra">  
+                <label id="lblQueries" value="CONSULTAS"/>
+                <combobox id="cmbQueries">
+                </combobox>
+                <label id="lblParametroUno" value="SELECCIONAR"/>
+                <combobox id="cmbParamUno">
+                </combobox>
+                <label id="lblParametroDos" value="SELECCIONAR"/>
+                <combobox id="cmbParamDos">
+                </combobox>
+                <button class="boton-buscar" id="btnBuscar" label="BUSCAR" onClick="" style=""></button>
+            </h:div>   
+            <listbox id="listaDatos" mold="paging" pageSize="10" width="" height="" onSelect="">
+                <listhead>
+                    <listheader class="lista-header" label="MARCA"/>
+                    <listheader class="lista-header" label="MODELO"/>
+                    <listheader class="lista-header" label="TIPO DE VEHICULO"/>
+                    <listheader class="lista-header" label="VALOR EN PESOS ARGENTINOS"/>
+                    <listheader class="lista-header" label="AÑO QUE FUE COTIZADO"/>
+                </listhead>
+                <listitem>
+                    <listcell label=""/>
+                    <listcell label=""/>
+                </listitem>						
+            </listbox>
+            <h:div class="autor">Desarrollador<h:br></h:br>
+                <h:b>Jeremías Mazzetti</h:b>
+            </h:div>
+        </h:div>
+        
+        <style>                
+            .boton-buscar{
+            transition-duration: 0.5s;
+            color: #00DDDD;
+            background-color: #000000;
+            border-radius:5px;
+            width:125px;
+            margin-bottom:25px;
+            }
+            .boton-buscar:hover{
+            transition-duration: 0.5s;
+            color: #000000;
+            background-color: #00DDDD;
+            border-radius:5px;
+            }
+            .titulo, .autor{
+            background-color:#999999;
+            color:#FFFFFF;
+            }
+            .titulo-app{
+            font-size:24px;
+            text-align:center;
+            color:#000000;
+            background-color:#00DDDD;
+            margin:0px;
+            margin-top:-40px;
+            margin-bottom: 10px;
+            }
+            .botonera-contenido{
+            paddin:5px 0;
+            background:#00FFFFAA;
+            width:auto;
+            }
+            .contenedor{
+            transform: translateY(-35px);
+            position: relative;
+            width:90%;
+            text-align:center;
+            margin:auto;
+            background-color:#00FFFFAA;
+            height:640px;
+            }
+            .cmbCampo{
+            width:250px;
+            }
+            .lista-header{
+            text-align:center;
+            color: #FFFFFF;
+            background-color: #00DDDD;
+            }
+            body{
+            font-size:35px;
+            }
+            .autor{
+            position: absolute;
+            left: 0px;
+            right: 0px;
+            bottom: 0px;
+            }
+        </style>
+        
+    </window>
+</zk>
