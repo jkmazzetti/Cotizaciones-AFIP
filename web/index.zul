@@ -11,7 +11,7 @@
                 <h:p>
                 
                 </h:p>
-                <h:h3 class="titulo-app">Iniciar Búqueda</h:h3>
+                <h:h3 class="titulo-app">Iniciar Búsqueda</h:h3>
                 <h:div class="busqueda-barra">  
                     <label id="lblQueries" value="CONSULTAS"/>
                     <combobox id="cmbQueries">
