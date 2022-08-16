@@ -53,7 +53,6 @@ public class IndexControlador extends Controlador {
             resultado = sql.executeQuery(consulta);
             while (resultado.next()) {
                 cmbQueries.appendItem(resultado.getString(1));
-
             }
         } catch (SQLException ex) {
             Logger.getLogger(IndexControlador.class.getName()).log(Level.SEVERE, null, ex);
@@ -80,7 +79,7 @@ public class IndexControlador extends Controlador {
                 + cmbQueries.getText() + "'";
         try {
             resultado = sql.executeQuery(consulta);
-            while (resultado.next()) {
+            while (resultado!=null && resultado.next()) {
                 consulta = resultado.getString(1);
                 paramUno = resultado.getString(2);
                 if (cmbQueries.getSelectedIndex() != 6) {
@@ -90,13 +89,13 @@ public class IndexControlador extends Controlador {
             }
             resultado = null;
             resultado = sql.executeQuery(paramUno);
-            while (resultado.next()) {
+            while (resultado!=null && resultado.next()) {
                 cmbParamUno.appendItem(resultado.getString(1));
             }
             resultado = null;
             if (cmbQueries.getSelectedIndex() != 6) {
                 resultado = sql.executeQuery(paramDos);
-                while (resultado.next()) {
+                while (resultado!=null && resultado.next()) {
                     cmbParamDos.appendItem(resultado.getString(1));
                 }
             }
@@ -106,18 +105,17 @@ public class IndexControlador extends Controlador {
 
     }
 
-    /*
-    
+    /*    
     En caso de que el usuario haya elegido la opcion de consultar por marca, enseguida se
     debe realizar una consulta para obtener todos los modelos.
      */
     public void onSelect$cmbParamUno() {
-        String consultaAux = "SELECT A.descripcion FROM Automoviles AS A, Marcas AS M WHERE M.marca='" + cmbParamUno.getText() + "' AND M.id_marca=A.id_marca";
+        String consultaAux = "SELECT DISTINCT A.descripcion FROM Automoviles AS A, Marcas AS M WHERE M.marca='" + cmbParamUno.getText() + "' AND M.id_marca=A.id_marca";
         if (cmbQueries.getSelectedIndex() == 6) {
             cmbParamDos.getChildren().clear();
             try {
                 resultado = sql.executeQuery(consultaAux);
-                while (resultado.next()) {
+                while (resultado!=null && resultado.next()) {
                     cmbParamDos.appendItem(resultado.getString(1));
                 }
             } catch (SQLException ex) {
@@ -152,7 +150,7 @@ public class IndexControlador extends Controlador {
         }
         try {
             List<ArrayList<String>> resultados = new ArrayList<ArrayList<String>>();
-            while (resultado.next()) {
+            while (resultado!=null && resultado.next()) {
                 List<String> listaConDatosRecibidos = new ArrayList<String>();
                 if (resultado.getString(1) != null) {
                     listaConDatosRecibidos.add(resultado.getString(1));
